@@ -56,4 +56,4 @@ The js-ipfs Project is dual-licensed under Apache 2.0 and MIT terms:
 
 ## Thanks
 
-Thanks to @alanshaw, author of [filecoin-contributors](https://github.com/filecoin-project/filecoin-contributors) which itself was inspired by https://gist.github.com/alanshaw/5a2d9465c5a05b201d949551bdb1fcc3, also by @alanshaw all of which this module is a blatant ripoff of.  I mean an homage.  A pale imitation, if you will.
+Thanks to @alanshaw, author of [filecoin-contributors](https://github.com/filecoin-project/filecoin-contributors) (which itself was inspired by https://gist.github.com/alanshaw/5a2d9465c5a05b201d949551bdb1fcc3, also by @alanshaw) of which this module is a blatant ripoff.  I mean an homage.  A pale imitation, if you will.
