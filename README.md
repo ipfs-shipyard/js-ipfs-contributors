@@ -54,6 +54,6 @@ The js-ipfs Project is dual-licensed under Apache 2.0 and MIT terms:
 - Apache License, Version 2.0, ([LICENSE-APACHE](https://github.com/ipfs/go-ipfs/blob/master/LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
 - MIT license ([LICENSE-MIT](https://github.com/ipfs/go-ipfs/blob/master/LICENSE-MIT) or http://opensource.org/licenses/MIT)
 
-## Thanks
+## Thanks
 
-Thanks to @alanshaw, author of [filecoin-contributors](https://github.com/filecoin-project/filecoin-contributors) of which this is a blatant ripoff.
+Thanks to @alanshaw, author of [filecoin-contributors](https://github.com/filecoin-project/filecoin-contributors) of which this is a blatant ripoff.  I mean an homage.
