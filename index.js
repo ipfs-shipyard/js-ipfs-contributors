@@ -58,6 +58,9 @@ async function main ({ argv, env }) {
       repos.push(repo)
     }
 
+    // not sure this is right - it'll fetch between the date of the last release and now, but other stuff
+    // could have gone into master after the release branch was cut but before the release was done.
+    // Should probably look at the commits of deps that resolve to different versions between releases.
     const lastRelease = await fetch('https://api.github.com/repos/ipfs/js-ipfs/releases/latest')
       .then(res => res.json())
 
