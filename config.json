@@ -21,7 +21,7 @@
     "ipfs/js-ipfs-unixfs-exporter",
     "ipfs/js-ipfs-name",
     "ipfs/js-ipfs-utils",
-    "ipfs/js-datatore-pubsub",
+    "ipfs/js-datastore-pubsub",
     "ipfs/js-ipfs-unixfs-importer",
     "ipfs/js-ipfs-repo-migrations",
 
@@ -30,7 +30,7 @@
     "ipld/js-ipld-dag-cbor",
     "ipld/js-ipld-block",
     "ipld/js-ipld-git",
-    "ipld/js-ipld-etherum",
+    "ipld/js-ipld-ethereum",
     "ipld/js-ipld-bitcoin",
     "ipld/js-ipld-eth-block",
     "ipld/js-ipld-eth-tx",
@@ -71,5 +71,14 @@
     "libp2p/js-libp2p-udp",
     "libp2p/js-libp2p-nat-mngr",
     "libp2p/js-libp2p-udt"
+  ],
+  "bots": [
+    "dependabot",
+    "dependabot-preview",
+    "dependabot-preview[bot]",
+    "greenkeeper[bot]",
+    "greenkeeper",
+    "azure-pipelines",
+    "codecov"
   ]
 }

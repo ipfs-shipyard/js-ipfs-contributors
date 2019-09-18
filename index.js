@@ -9,6 +9,7 @@ const nyc = require('name-your-contributors/src/index')
 const getList = require('./contributions-list')
 const Config = require('./config')
 const fetch = require('node-fetch')
+const prettyMs = require('pretty-ms')
 
 async function main ({ argv, env }) {
   console.log(`${Chalk.cyan('⬢')} ${Chalk.bold(Chalk.whiteBright('js-IPFS Contributors'))}`)
@@ -67,6 +68,7 @@ async function main ({ argv, env }) {
     const contributions = {}
 
     for (const orgRepo of repos) {
+      const start = Date.now()
       spinner.start(`${Chalk.white('Getting contributors to')} ${Chalk.grey('github.com/') + orgRepo}`)
 
       const [ user, repo ] = orgRepo.split('/')
@@ -82,7 +84,7 @@ async function main ({ argv, env }) {
 
       spinner.stopAndPersist({
         symbol: '❤️ ',
-        text: `${Chalk.white('Successfully got contributors for')} ${Chalk.grey('github.com/') + orgRepo}`
+        text: `${Chalk.white('Successfully got contributors for')} ${Chalk.grey('github.com/') + orgRepo} in ${prettyMs(Date.now() - start)}`
       })
     }
 
