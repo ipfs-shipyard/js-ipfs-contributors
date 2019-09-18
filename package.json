@@ -1,0 +1,34 @@
+{
+  "name": "js-ipfs-contributors",
+  "version": "1.0.0",
+  "description": "Script to generate a list of the contributors to js-IPFS since a given date",
+  "main": "index.js",
+  "bin": {
+    "js-ipfs-contributors": "index.js"
+  },
+  "scripts": {
+    "start": "node index",
+    "test": "standard"
+  },
+  "author": "@ipfs/js-core",
+  "license": "(Apache-2.0 OR MIT)",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "debug": "^4.1.1",
+    "inquirer": "^6.3.1",
+    "name-your-contributors": "^3.4.0",
+    "node-fetch": "^2.6.0",
+    "ora": "^3.4.0"
+  },
+  "devDependencies": {
+    "standard": "^12.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ipfs-shipyard/js-ipfs-contributors.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ipfs-shipyard/js-ipfs-contributors/issues"
+  },
+  "homepage": "https://github.com/ipfs-shipyard/js-ipfs-contributors#readme"
+}
