@@ -59,14 +59,22 @@ async function main ({ argv, env }) {
       repos.push(repo)
     }
 
-    // not sure this is right - it'll fetch between the date of the last release and now, but other stuff
-    // could have gone into master after the release branch was cut but before the release was done.
-    // Should probably look at the commits of deps that resolve to different versions between releases.
-    const lastRelease = await fetch('https://api.github.com/repos/ipfs/js-ipfs/releases/latest')
+    // work out the last `x.x.0` release
+    const lastRelease = await fetch('https://api.github.com/repos/ipfs/js-ipfs/releases')
       .then(res => res.json())
+      .then(releases => {
+        return releases
+          .filter(release => {
+            return release.tag_name.endsWith('.0') && !release.tag_name.includes('-')
+          })
+          .shift()
+      })
 
     const contributions = {}
 
+    // not sure this is right - it'll fetch between the date of the last release and now, but other stuff
+    // could have gone into master after the release branch was cut but before the release was done.
+    // Should probably look at the commits of deps that resolve to different versions between releases.
     for (const orgRepo of repos) {
       const start = Date.now()
       spinner.start(`${Chalk.white('Getting contributors to')} ${Chalk.grey('github.com/') + orgRepo}`)
