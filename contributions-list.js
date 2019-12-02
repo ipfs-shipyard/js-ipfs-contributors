@@ -40,7 +40,7 @@ module.exports = repoContributions => {
   }
 
   const sortedPeople = Object.values(people).sort((a, b) => a.login.toLowerCase().localeCompare(b.login.toLowerCase()))
-console.info(JSON.stringify(sortedPeople.map(p => ({ name: p.name, login: p.login })), null, 2))
+
   return sortedPeople
     .filter(p => !isBot(p))
     .reduce((lines, p) => {
