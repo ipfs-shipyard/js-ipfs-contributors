@@ -2,7 +2,7 @@
   "repos": [
     "ChainSafe/gossipsub-js",
 
-    "ipfs/interface-datastore"
+    "ipfs/interface-datastore",
     "ipfs/interface-js-ipfs-core",
     "ipfs/js-ipfs",
     "ipfs/js-datastore-core",
@@ -82,7 +82,7 @@
     "multiformats/js-mafmt",
     "multiformats/js-multiaddr",
     "multiformats/js-multiaddr-to-uri",
-    "multiformats/js-multibase"
+    "multiformats/js-multibase",
     "multiformats/js-multicodec",
     "multiformats/js-multihash",
     "multiformats/js-multihashing-async",
