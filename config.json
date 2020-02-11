@@ -1,8 +1,13 @@
 {
   "repos": [
-    "ipfs/js-ipfs",
-    "ipfs/js-ipfs-http-client",
+    "ChainSafe/gossipsub-js",
+
+    "ipfs/interface-datastore"
     "ipfs/interface-js-ipfs-core",
+    "ipfs/js-ipfs",
+    "ipfs/js-datastore-core",
+    "ipfs/js-datastore-pubsub",
+    "ipfs/js-ipfs-http-client",
     "ipfs/js-ipfsd-ctl",
     "ipfs/js-ipfs-repo",
     "ipfs/js-ipfs-bitswap",
@@ -15,15 +20,15 @@
     "ipfs/js-datastore-fs",
     "ipfs/js-ipns",
     "ipfs/js-ipfs-multipart",
-    "ipfs/js-datastore-core",
     "ipfs/js-ipfs-http-response",
-    "ipfs/protons",
     "ipfs/js-ipfs-unixfs-exporter",
     "ipfs/js-ipfs-name",
     "ipfs/js-ipfs-utils",
-    "ipfs/js-datastore-pubsub",
     "ipfs/js-ipfs-unixfs-importer",
     "ipfs/js-ipfs-repo-migrations",
+    "ipfs/interop",
+    "ipfs/is-ipfs",
+    "ipfs/protons",
 
     "ipld/js-ipld",
     "ipld/js-ipld-dag-pb",
@@ -70,7 +75,18 @@
     "libp2p/js-libp2p-stardust",
     "libp2p/js-libp2p-udp",
     "libp2p/js-libp2p-nat-mngr",
-    "libp2p/js-libp2p-udt"
+    "libp2p/js-libp2p-udt",
+    
+    "multiformats/js-cid",
+    "multiformats/js-cid-tool",
+    "multiformats/js-mafmt",
+    "multiformats/js-multiaddr",
+    "multiformats/js-multiaddr-to-uri",
+    "multiformats/js-multibase"
+    "multiformats/js-multicodec",
+    "multiformats/js-multihash",
+    "multiformats/js-multihashing-async",
+    "multiformats/js-uri-to-multiaddr"
   ],
   "bots": [
     "dependabot",
