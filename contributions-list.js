@@ -33,7 +33,7 @@ module.exports = repoContributions => {
     if (person.counts.prCreators) counts.push(`${person.counts.prCreators} ${plural('PR', person.counts.prCreators)}`)
     if (person.counts.issueCreators) counts.push(`${person.counts.issueCreators} ${plural('issue', person.counts.issueCreators)}`)
     // if (person.counts.reviewers) counts.push(`${person.counts.reviewers} ${plural('review', person.counts.reviewers)}`)
-    let totalComments = (person.counts.prCommentators || 0) + (person.counts.issueCommentators || 0)
+    const totalComments = (person.counts.prCommentators || 0) + (person.counts.issueCommentators || 0)
     if (totalComments) counts.push(`${totalComments} ${plural('comment', totalComments)}`)
     if (counts.length) return ` (${counts.join(', ')})`
     return ''

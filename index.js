@@ -79,7 +79,7 @@ async function main ({ argv, env }) {
       const start = Date.now()
       spinner.start(`${Chalk.white('Getting contributors to')} ${Chalk.grey('github.com/') + orgRepo}`)
 
-      const [ user, repo ] = orgRepo.split('/')
+      const [user, repo] = orgRepo.split('/')
 
       contributions[orgRepo] = await nyc.repoContributors({
         token: githubToken,
