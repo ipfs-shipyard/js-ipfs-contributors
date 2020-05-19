@@ -10,8 +10,34 @@ const getList = require('./contributions-list')
 const Config = require('./config')
 const fetch = require('node-fetch')
 const prettyMs = require('pretty-ms')
+const argv = require('yargs')
+    .usage('Usage: $0')
+    .usage('Usage: $0 --start [Date] --end [Date]')
+    .option('start', {
+      description: 'Earliest date to consider changes from',
+      coerce: (val) => {
+        if (!val) {
+          return undefined
+        }
 
-async function main ({ argv, env }) {
+        return new Date(val)
+      }
+    })
+    .option('end', {
+      description: 'Latest date to consider changes from',
+      coerce: (val) => {
+        if (!val) {
+          return undefined
+        }
+
+        return new Date(val)
+      }
+    })
+    .help('h')
+    .alias('h', 'help')
+    .argv
+
+async function main ({ env }) {
   console.log(`${Chalk.cyan('⬢')} ${Chalk.bold(Chalk.whiteBright('js-IPFS Contributors'))}`)
   const spinner = ora()
 
@@ -85,8 +111,8 @@ async function main ({ argv, env }) {
         token: githubToken,
         user,
         repo,
-        before: new Date(),
-        after: new Date(lastRelease.published_at),
+        before: argv.end || new Date(),
+        after: argv.start || new Date(lastRelease.published_at),
         commits: true
       })
 
