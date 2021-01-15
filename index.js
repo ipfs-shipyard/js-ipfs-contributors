@@ -11,31 +11,31 @@ const Config = require('./config')
 const fetch = require('node-fetch')
 const prettyMs = require('pretty-ms')
 const argv = require('yargs')
-    .usage('Usage: $0')
-    .usage('Usage: $0 --start [Date] --end [Date]')
-    .option('start', {
-      description: 'Earliest date to consider changes from',
-      coerce: (val) => {
-        if (!val) {
-          return undefined
-        }
-
-        return new Date(val)
+  .usage('Usage: $0')
+  .usage('Usage: $0 --start [Date] --end [Date]')
+  .option('start', {
+    description: 'Earliest date to consider changes from',
+    coerce: (val) => {
+      if (!val) {
+        return undefined
       }
-    })
-    .option('end', {
-      description: 'Latest date to consider changes from',
-      coerce: (val) => {
-        if (!val) {
-          return undefined
-        }
 
-        return new Date(val)
+      return new Date(val)
+    }
+  })
+  .option('end', {
+    description: 'Latest date to consider changes from',
+    coerce: (val) => {
+      if (!val) {
+        return undefined
       }
-    })
-    .help('h')
-    .alias('h', 'help')
-    .argv
+
+      return new Date(val)
+    }
+  })
+  .help('h')
+  .alias('h', 'help')
+  .argv
 
 async function main ({ env }) {
   console.log(`${Chalk.cyan('⬢')} ${Chalk.bold(Chalk.whiteBright('js-IPFS Contributors'))}`)
@@ -85,16 +85,27 @@ async function main ({ env }) {
       repos.push(repo)
     }
 
+    let lastRelease
+
     // work out the last `x.x.0` release
-    const lastRelease = await fetch('https://api.github.com/repos/ipfs/js-ipfs/releases')
-      .then(res => res.json())
-      .then(releases => {
-        return releases
-          .filter(release => {
-            return release.tag_name.endsWith('.0') && !release.tag_name.includes('-')
-          })
-          .shift()
-      })
+    for (let page = 1; page < 10; page++) {
+      const result = await fetch(`https://api.github.com/repos/ipfs/js-ipfs/releases?page=${page}`)
+      const releases = await result.json()
+
+      lastRelease = releases
+        .filter(release => {
+          return release.tag_name.startsWith('ipfs@') && release.tag_name.endsWith('.0') && !release.tag_name.includes('-')
+        })
+        .shift()
+
+      if (lastRelease) {
+        break
+      }
+    }
+
+    if (!lastRelease) {
+      throw new Error('Could not find ipfs release in 10 pages of releases')
+    }
 
     const contributions = {}
 
