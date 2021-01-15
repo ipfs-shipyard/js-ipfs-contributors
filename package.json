@@ -1,6 +1,6 @@
 {
   "name": "js-ipfs-contributors",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Script to generate a list of the contributors to js-IPFS since a given date",
   "main": "index.js",
   "bin": {
