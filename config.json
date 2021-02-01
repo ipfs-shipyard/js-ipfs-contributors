@@ -44,6 +44,11 @@
     "ipld/js-ipld-torrent-file",
     "ipld/js-ipld-torrent-info",
     "ipld/js-codec-interface",
+    "ipld/js-block",
+    "ipld/js-dag-cbor",
+    "ipld/js-dag-pb",
+    "ipld/js-car",
+    "ipld/js-dag-json",
 
     "libp2p/js-libp2p",
     "libp2p/js-libp2p-webrtc-star",
@@ -76,7 +81,7 @@
     "libp2p/js-libp2p-udp",
     "libp2p/js-libp2p-nat-mngr",
     "libp2p/js-libp2p-udt",
-    
+
     "multiformats/js-cid",
     "multiformats/js-cid-tool",
     "multiformats/js-mafmt",
@@ -84,8 +89,10 @@
     "multiformats/js-multiaddr-to-uri",
     "multiformats/js-multibase",
     "multiformats/js-multicodec",
+    "multiformats/js-multiformats",
     "multiformats/js-multihash",
     "multiformats/js-multihashing-async",
+    "multiformats/js-multistream-select",
     "multiformats/js-uri-to-multiaddr"
   ],
   "bots": [
@@ -95,6 +102,7 @@
     "greenkeeper[bot]",
     "greenkeeper",
     "azure-pipelines",
-    "codecov"
+    "codecov",
+    "welcome"
   ]
 }
